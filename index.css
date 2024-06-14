@@ -1,0 +1,261 @@
+@import url(https://unpkg.com/fixedsys-css/css/fixedsys.css);
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* #fd435a */
+/*  #feeac7*/
+/* #002233 */
+body {
+  background: url(/images/blob.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+.container {
+  width: 100%;
+  height: 200vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.content-up {
+  background: #feeac7ad;
+  backdrop-filter: blur(7px);
+  width: 75%;
+  height: 42%;
+  border-radius: 18px;
+  position: relative;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.content-up h1 {
+  position: absolute;
+  margin-right: 15px;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  /* font-family: 'Playfair Display', serif; */
+  font-family: 'Spicy Rice';
+  letter-spacing: 5px;
+  z-index: 10;
+}
+.word1 {
+  font-size: 200px;
+  left: 10%;
+  color: #002233;
+}
+.word2 {
+  font-size: 220px;
+  color: #fd435a;
+  top: 10%;
+  left: 52%;
+}
+.word3 {
+  font-size: 200px;
+  color: #002233;
+  top: 21%;
+  left: 31%;
+}
+.content-up h1:hover {
+  -webkit-text-stroke: 2px #002233;
+  color: transparent;
+}
+.img {
+  height: 76%;
+  position: absolute;
+  top: 24%;
+  z-index: 11;
+}
+.img-l {
+  left: -11%;
+}
+.content-up .btn {
+  width: 200px;
+  height: 65px;
+  position: absolute;
+  right: 10%;
+  bottom: 21%;
+  border: none;
+  color: #fd435a;
+  border-radius: 15px;
+  background-color: #002233;
+  font-size: 22px;
+  font-family: 'Spicy Rice';
+  transition: 0.6s ease-in-out;
+}
+.content-up .btn:hover {
+  transform: translate(10px, 10px);
+}
+.content-up p {
+  font-family: 'Playfair Display', serif;
+  color: #002233;
+  position: absolute;
+  left: 35%;
+  top: 60%;
+  font-size: 22px;
+}
+svg {
+  position: absolute;
+  height: 64%;
+  z-index: -1;
+}
+.svg1 {
+  bottom: -57%;
+  right: 0%;
+}
+.svg2 {
+  bottom: -70%;
+  left: 19%;
+}
+.svg3 {
+  bottom: -100%;
+  right: 20%;
+  height: 77%;
+}
+.content-down {
+  background-color: transparent;
+  border: 1px solid #feeac7;
+  backdrop-filter: blur(7px);
+  width: 75%;
+  height: 44%;
+  border-radius: 18px;
+  position: relative;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+.inner-content-down {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: 62% 38%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+}
+.walle {
+  background: url(images/walle.jpg);
+}
+.leo {
+  background: url(images/leo.jpg);
+}
+.miraculous {
+  background: url(images/miraculous.jpg);
+}
+.elemental {
+  background: url(images/elemental.jpg);
+}
+.coco {
+  background: url(images/coco.jpg);
+}
+.kraken {
+  background: url(images/kraken.jpg);
+}
+.migration {
+  background: url(images/migration.jpg);
+}
+.paw {
+  background: url(images/paw.jpg);
+}
+.spy-family {
+  background: url(images/spyXfamily.jpg);
+}
+.wish {
+  background: url(images/wish.jpg);
+}
+.monkey-king {
+  background: url(images/theMonkeyKing.jpg);
+}
+.trolls {
+  background: url(images/trolls.jpg);
+}
+.content-right {
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+.name-counter {
+  width: 75%;
+  display: flex;
+  font-family: 'Playfair Display';
+  justify-content: space-between;
+  color: #feeac7;
+  padding: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+video {
+  width: 100%;
+  height: 45%;
+  background: transparent;
+}
+.btns {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+}
+.options {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 30%);
+  justify-content: space-evenly;
+  margin-top: 17px;
+}
+.btn-choose {
+  height: 72px;
+  background: #002233a8;
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  color: #feeac7;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 15px;
+  margin-bottom: 18px;
+  transition: 0.3s;
+  border: 1px solid #feeac7;
+}
+.btn-choose:hover {
+  transform: translateY(4px);
+}
+.btn-opt {
+  height: 50px;
+  border: none;
+  border-radius: 15px;
+  font-size: 22px;
+  font-family: 'Spicy Rice';
+  transition: 0.6s ease-in-out;
+}
+.btn-nxt {
+  background-color: #fd435a;
+  color: #002233;
+}
+.btn-prv {
+  color: #fd435a;
+  background-color: #002233;
+}
+.btn-opt:hover {
+  transform: translate(10px, 10px);
+}
