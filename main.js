@@ -11,14 +11,17 @@ let counter = document.querySelector('.counter');
 let videoPlayer = document.querySelector('.video-player');
 let videoSrc = document.querySelector('.video-src');
 let animationImage = document.querySelector('.content-right');
+let chooseBtnOne = document.querySelector('.choose-btn1');
+let chooseBtnTwo = document.querySelector('.choose-btn2');
+let chooseBtnThree = document.querySelector('.choose-btn3');
 /* close the overlay and modal window */
 // console.log(videoSrc.src);
 const walle = {
   video: '/videos/walle.mp4',
   image: '/images/walle.jpg',
-  chooseOne: 'what is your name ?',
-  chooseTwo: 'what is this about?',
-  chooseThree: 'are you okay?',
+  chooseOne: 'Hello ?...',
+  chooseTwo: 'Iam walle',
+  chooseThree: 'how are you?!..',
 };
 const coco = {
   video: '/videos/coco.mp4',
@@ -112,6 +115,7 @@ let animations = [
   trolls,
   wish,
 ];
+let animationsMap = new Map();
 
 closeBtn.addEventListener('click', () => {
   if (userNameInput.value !== '') {
@@ -121,8 +125,9 @@ closeBtn.addEventListener('click', () => {
   }
 });
 
-let previousAnimationCard = 11;
 let questionCounter = 0;
+// counter.textContent = questionCounter + 1;
+
 // nxtBtn.forEach(btn => {
 //   btn.addEventListener('click', () => {
 //     // const randomAnimation = Math.trunc(Math.random() * 12) + 1;
@@ -157,30 +162,32 @@ let questionCounter = 0;
 //     else previousAnimationCard--;
 //   });
 // });
+function changeAnimationCard(anima) {
+  videoSrc.src = anima.video;
+  videoPlayer.load();
+  chooseBtnOne.textContent = anima.chooseOne;
+  chooseBtnTwo.textContent = anima.chooseTwo;
+  chooseBtnThree.textContent = anima.chooseThree;
+  animationImage.style.background = `url(${anima.image})`;
+  animationImage.style.backgroundSize = 'cover';
+  animationImage.style.backgroundRepeat = 'no-repeat';
+  animationImage.style.backgroundPosition = 'bottom center';
+}
+
 nxtBtn.addEventListener('click', () => {
-  counter.textContent = questionCounter + 1;
-  if (questionCounter === 1) previousAnimationCard = 12;
-  else previousAnimationCard = questionCounter - 1;
-  if (questionCounter + 1 > 12) questionCounter = 1;
+  if (questionCounter + 1 > 11) questionCounter = 0;
   else questionCounter++;
+  counter.textContent = questionCounter + 1;
   let animation = animations[questionCounter];
-  videoSrc.src = animation.video;
-  videoPlayer.load();
-  animationImage.style.background = `url(${animation.image})`;
-  animationImage.style.backgroundSize = 'cover';
-  animationImage.style.backgroundRepeat = 'no-repeat';
-  animationImage.style.backgroundPosition = 'bottom center';
+  changeAnimationCard(animation);
+
   //   videoPlayer.play();
-  //   console.log(videoSrc.src);
 });
+
 prvBtn.addEventListener('click', () => {
-  if (previousAnimationCard - 1 === 0) previousAnimationCard = 12;
-  else previousAnimationCard--;
+  if (questionCounter - 1 < 0) questionCounter = 11;
+  else questionCounter--;
+  counter.textContent = questionCounter + 1;
   let animation = animations[questionCounter];
-  videoSrc.src = animation.video;
-  videoPlayer.load();
-  animationImage.style.background = `url(${animation.image})`;
-  animationImage.style.backgroundSize = 'cover';
-  animationImage.style.backgroundRepeat = 'no-repeat';
-  animationImage.style.backgroundPosition = 'bottom center';
+  changeAnimationCard(animation);
 });
